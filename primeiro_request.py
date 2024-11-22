@@ -1,6 +1,6 @@
 import requests
 
-url = "https://google.com"
+url = "https://google.com?param1=valor1"
 
 resposta = requests.get(url)
 
