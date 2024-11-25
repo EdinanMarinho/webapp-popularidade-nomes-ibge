@@ -10,6 +10,12 @@ data = {
     }
 }
 
-resposta = requests.post(url, json=data)
+params = {
+    'dataInicio': '2024-01-01',
+    'dataFim': '2024-02-01',
+}
 
-print( resposta.json() )
+resposta = requests.post(url, json=data, params=params)
+
+print( resposta.request.url )
+# print( resposta.json() )
