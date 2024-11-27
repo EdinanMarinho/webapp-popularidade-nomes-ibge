@@ -1,8 +1,12 @@
 import requests
 
 url = 'https://httpbin.org/get'
+resposta = requests.get(url)
 
-resposta = requests.post(url)
-resposta.raise_for_status()
-
-# print(resposta.text)
+try:
+    resposta.raise_for_status()
+except requests.HTTPError as e:
+    print(f'Impossível fazer request! Erro: {e}')
+else:
+    print('Resultado:')
+    print(resposta.json())
