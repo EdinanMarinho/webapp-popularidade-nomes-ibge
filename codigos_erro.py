@@ -2,7 +2,7 @@ import requests
 
 url = 'https://httpbin.org/get'
 
-resposta = requests.get(url)
-print( resposta.status_code)
+resposta = requests.post(url)
+resposta.raise_for_status()
 
 # print(resposta.text)
