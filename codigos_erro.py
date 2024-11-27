@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://httpbin.org/get'
+url = 'https://httpbin.org/get/este-site/nao-exist'
 resposta = requests.post(url)
 
 try:
