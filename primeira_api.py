@@ -3,9 +3,9 @@ from pprint import pprint
 
 nome = 'jessica'
 
-url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
+url = f"https://servicodados.ibge.gov.br/api/v2/censos/xxxx/{nome}"
 
-resposta = requests.post(url)
+resposta = requests.get(url)
 
 try:
     resposta.raise_for_status()
