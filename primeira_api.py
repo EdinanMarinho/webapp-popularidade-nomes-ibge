@@ -7,6 +7,7 @@ url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
 
 params = {
     'sexo': 'M',
+    'localidade': 33
 }
 
 resposta = requests.get(url, params=params)
