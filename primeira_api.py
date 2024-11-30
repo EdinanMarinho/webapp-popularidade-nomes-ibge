@@ -10,7 +10,10 @@ params = {
     'localidade': 33
 }
 
+
 resposta = requests.get(url, params=params)
+
+print(resposta.request.url)
 
 try:
     resposta.raise_for_status()
