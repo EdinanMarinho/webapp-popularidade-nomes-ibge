@@ -1,11 +1,15 @@
 import requests
 from pprint import pprint
 
-nome = 'jessica'
+nome = 'ariel'
 
-url = f"https://servicodados.ibge.gov.br/api/v2/censos/xxxx/{nome}"
+url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
 
-resposta = requests.get(url)
+params = {
+    'sexo': 'M',
+}
+
+resposta = requests.get(url, params=params)
 
 try:
     resposta.raise_for_status()
@@ -14,4 +18,4 @@ except requests.HTTPError as e:
     resultado = None
 else:
     resultado = resposta.json()
-    pprint(resultado[0]['res'])
+    pprint(resultado)
