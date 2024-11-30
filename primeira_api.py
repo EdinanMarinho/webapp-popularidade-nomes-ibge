@@ -1,4 +1,5 @@
 import requests
+from pprint import pprint
 
 nome = 'joao'
 
@@ -14,4 +15,4 @@ except requests.HTTPError as e:
 else:
     resultado = resposta.json()
 
-print(resultado)
+pprint(resultado)
