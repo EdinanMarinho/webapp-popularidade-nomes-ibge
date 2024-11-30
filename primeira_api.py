@@ -1,9 +1,17 @@
 import requests
 
-nome = "joao"
+nome = 'joao'
 
 url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
 
 resposta = requests.get(url)
 
-print( resposta )
+try:
+    resposta.raise_for_status()
+except requests.HTTPError as e:
+    print( f'Erro no request:: {e}' )
+    resultado = None
+else:
+    resultado = resposta.json()
+
+print(resultado)
