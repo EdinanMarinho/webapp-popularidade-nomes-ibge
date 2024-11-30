@@ -1,6 +1,6 @@
 import requests
 
-url = "https://google.com"
+url = "https://servicodados.ibge.gov.br/api/docs/"
 
 resposta = requests.get(url)
 
