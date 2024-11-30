@@ -1,7 +1,7 @@
 import requests
 from pprint import pprint
 
-nome = 'joao'
+nome = 'edinan'
 
 url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
 
@@ -15,4 +15,4 @@ except requests.HTTPError as e:
 else:
     resultado = resposta.json()
 
-pprint(resultado)
+pprint(resultado[0]['res'])
