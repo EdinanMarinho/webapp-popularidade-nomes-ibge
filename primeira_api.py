@@ -1,13 +1,11 @@
 import requests
 from pprint import pprint
 
-nome = 'jaqueline'
 
-url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
+url = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios"
 
 params = {
-    'sexo': 'F',
-    'groupBy': 'UF'
+
 }
 
 resposta = requests.get(url, params=params)
