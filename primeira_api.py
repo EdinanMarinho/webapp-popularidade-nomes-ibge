@@ -1,7 +1,7 @@
 import requests
 from pprint import pprint
 
-nome = 'gabriela'
+nome = 'hanna'
 
 url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
 
