@@ -2,7 +2,7 @@ import requests
 from pprint import pprint
 
 
-url = "https://servicodados.ibge.gov.br/api/v1/localidades/municipios"
+url = "https://servicodados.ibge.gov.br/api/v1/localidades/estados"
 
 params = {
     "view":"nivelado"
