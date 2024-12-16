@@ -4,6 +4,7 @@ import streamlit as st
 
 from pprint import pprint
 
+
 def fazer_request(url, params=None):
     resposta = requests.get(url=url, params=params)
     try:
@@ -17,9 +18,9 @@ def fazer_request(url, params=None):
 
 
 def pegar_nome_por_decada(nome):
-    url = f"https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}"
+    url = f'https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}'
     dados_decadas = fazer_request( url=url )
-    print(dados_decadas)
+    # print(dados_decadas)
     dict_decadas = {}
     for dados in dados_decadas[0]['res']:
         decada = dados['periodo']
