@@ -10,7 +10,7 @@ def fazer_request(url, params=None):
     try:
         resposta.raise_for_status()
     except requests.HTTPError as e:
-        print( f'Erro no request: {e}' )
+        print( f'Erro no request:{e}' )
         resultado = None
     else:
         resultado = resposta.json()
@@ -20,7 +20,6 @@ def fazer_request(url, params=None):
 def pegar_nome_por_decada(nome):
     url = f'https://servicodados.ibge.gov.br/api/v2/censos/nomes/{nome}'
     dados_decadas = fazer_request( url=url )
-    # print(dados_decadas)
     dict_decadas = {}
     for dados in dados_decadas[0]['res']:
         decada = dados['periodo']
@@ -34,9 +33,8 @@ def main():
     nome  = st.text_input('Consulte um nome:')
     if not nome:
         st.stop()
-    
     dict_decadas = pegar_nome_por_decada(nome)
-    pprint(dict_decadas)
+    print(dict_decadas)
 
 if __name__ == '__main__':
     main()
