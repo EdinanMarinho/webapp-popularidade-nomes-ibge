@@ -4,7 +4,6 @@ import streamlit as st
 
 from pprint import pprint
 
-
 def fazer_request(url, params=None):
     resposta = requests.get(url=url, params=params)
     try:
@@ -27,6 +26,7 @@ def pegar_nome_por_decada(nome):
         dict_decadas[decada] =  quantidade
     return dict_decadas
 
+
 def main():
     st.title('Web App Nomes')
     st.write('Dados do IBGE (fonte: https://servicodados.ibge.gov.br/api/docs/nomes?versao=2)')
@@ -34,7 +34,9 @@ def main():
     if not nome:
         st.stop()
     dict_decadas = pegar_nome_por_decada(nome)
-    print(dict_decadas)
+    df = pd.DataFrame.from_dict(dict_decadas, orient='index')
+
+    st.dataframe(df)
 
 if __name__ == '__main__':
     main()
