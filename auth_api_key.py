@@ -1,17 +1,17 @@
 import os
+
 import requests
 from pprint import pprint
 import dotenv
 
 dotenv.load_dotenv()
+token = os.environ["CHAVE_API_OPENWEATHER"]
 
-token = os.environ['CHAVE_API_OPENWEATHER']
-
-url = 'https://api.openweathermap.org/data/2.5/weather'
+url = "https://api.openweathermap.org/data/2.5/weather"
 params = {
-    'appid': 'token',
-    'q': 'Sao Paulo',
-    'units': 'metric',
+    'appid': token,
+    'q': 'Florianopolis',
+    'units': 'metric'
 }
 
 resposta = requests.get(url=url, params=params)
