@@ -10,7 +10,7 @@ token = os.environ["CHAVE_API_OPENWEATHER"]
 url = "https://api.openweathermap.org/data/2.5/weather"
 params = {
     'appid': token,
-    'q': 'Florianopolis',
+    'q': 'Rio de Janeiro',
     'units': 'metric'
 }
 
