@@ -43,7 +43,12 @@ def main():
     if not dados_tempo:
         st.warning( f'Dados não encontrados para o local {local}')
         st.stop()
-
+    clima_atual = dados_tempo['weather'][0]['description']
+    temperatura = dados_tempo['main']['temp']
+    sensacao_termica = dados_tempo['main']['feels_like']
+    umidade = dados_tempo['main']['humidity']
+    cobertura_nuvens = dados_tempo['main']['clouds']['all']
+    
     print(dados_tempo)
 
 if __name__ == '__main__':
