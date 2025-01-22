@@ -27,4 +27,14 @@ except requests.HTTPError as e:
 else:
     resultado = resposta.json()
 
-pprint(resultado)
+token = resultado['access_token']
+
+id_artista = "1CFCsEqKrCyvAFKOATQHiW"
+
+url = f"https://api.spotify.com/v1/artists/{id_artista}"
+headers = {
+    'Authorization': f'Bearer {token}'
+}
+
+resposta = requests.get( url=url, headers=headers )
+pprint( resposta.json())
