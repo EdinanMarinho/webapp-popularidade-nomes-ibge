@@ -11,7 +11,6 @@ client_secret = os.environ['SPOTIFY_CLIENT_SECRET']
 
 auth = HTTPBasicAuth( username=client_id, password=client_secret )
 
-
 url = "https://accounts.spotify.com/api/token"
 body = {
     "grant_type": "client_credentials"
@@ -27,14 +26,14 @@ except requests.HTTPError as e:
 else:
     resultado = resposta.json()
 
-token = resultado['access_token']
+# token = resultado['access_token']
 
-id_artista = "1CFCsEqKrCyvAFKOATQHiW"
+# id_artista = "1CFCsEqKrCyvAFKOATQHiW"
 
-url = f"https://api.spotify.com/v1/artists/{id_artista}"
-headers = {
-    'Authorization': f'Bearer {token}'
-}
+# url = f"https://api.spotify.com/v1/artists/{id_artista}"
+# headers = {
+#     'Authorization': f'Bearer {token}'
+# }
 
-resposta = requests.get( url=url, headers=headers )
-pprint( resposta.json())
+# resposta = requests.get( url=url, headers=headers )
+# pprint( resposta.json())
